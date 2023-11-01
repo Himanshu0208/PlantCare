@@ -1,25 +1,22 @@
 from setuptools import setup, find_packages
-from typing import List
 
-HYPHEN_E_DOT = "-e."
+with open('README.MD', "r", encoding='utf-8') as f:
+    long_description = f.read()
 
-def get_requirements(file_path:str) -> List[str] :
-    requirements = []
-
-    with open(file=file_path) as file_obj:
-        requirements = file_obj.readlines()
-
-    if(HYPHEN_E_DOT in requirements) :
-        requirements.remove(HYPHEN_E_DOT)
-
-    requirements = [req.replace("\n","") for req in requirements]
-    return requirements
+__version__ = "0.0.0"
+AUTHOR_NAME = 'Himanshu'
+AUTHOR_USER_NAME = 'Himanshu0208'
+AUTHOR_EMAIL = 'himanshupandey1036@gmail.com'
+REPO = 'PlantCare'
+SRC_REPO = 'plant_care'
 
 setup(
-    name="PlantCare",
-    version='0.0.1',
-    author='Himanshu',
-    author_email='himanshupandey1036@gmail.com',
-    packages=find_packages(),
-    install_requires=get_requirements('requirements.txt')
+    name=SRC_REPO,
+    author=AUTHOR_NAME,
+    author_email=AUTHOR_EMAIL,
+    description="A small project for checking the disease of a some plant",
+    long_description=long_description,
+    url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO}",
+    package_dir={"":"src"},
+    packages=find_packages(where='src')
 )

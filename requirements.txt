@@ -10,4 +10,4 @@ Flask
 pyYAML
 tqdm
 joblib
--e.
+-e .
