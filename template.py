@@ -17,6 +17,8 @@ list_of_files = [
     'src/pipeline/__init__.py',
     'src/entity/__init__.py',
     'src/constants/__init__.py',
+    'src/logger.py',
+    'src/exception.py',
     'config/config.yaml',
     'dvc.yaml',
     'params.yaml',
