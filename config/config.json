@@ -13,13 +13,17 @@
 
     "prepare_base_model" : {
         "root_dir" : "artifacts/prepare_base_model",
-        "base_model_path" : {
-            "potato" : "artifacts/prepare_base_model/potato_base_model.h5",
-            "tomato": "artifacts/prepare_base_model/tomato_base_model.h5"
+        "model_dir" : {
+            "tomato" : "artifacts/prepare_base_model/tomato",
+            "potato" : "artifacts/prepare_base_model/potato"            
         },
-        "updated_base_model_path" : {
-            "potato" : "artifacts/prepare_base_model/potato_base_model_updated.h5",
-            "tomato": "artifacts/prepare_base_model/tomato_base_model_updated.h5"
+        "base_model_path" : {
+            "tomato" : "artifacts/prepare_base_model/tomato/base_model.h5",
+            "potato" : "artifacts/prepare_base_model/potato/base_model.h5"
+        },
+        "updated_model_path" : {
+            "tomato" : "artifacts/prepare_base_model/tomato/updated_base_model.h5",
+            "potato" : "artifacts/prepare_base_model/potato/updated_base_model.h5"
         }
     },
 

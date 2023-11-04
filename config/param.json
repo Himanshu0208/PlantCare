@@ -1,7 +1,14 @@
 {
-    "epochs" : 30,
-    "image_size" : {
-        "potato" : [256, 256],
-        "tomato" : [248, 248]
+    "IMAGE_SIZE" : {
+        "potato" : [256, 256, 3],
+        "tomato" : [224, 224, 3]
+    },
+    "BATCH_SIZE" : 16,
+    "EPOCHS" : 30,
+    "INCLUDE_TOP" : false,
+    "WEIGHTS" : "imagenet",
+    "CLASSES" : {
+        "potato" : 3,
+        "tomato" : 10
     }
 }
