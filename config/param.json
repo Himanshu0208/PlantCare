@@ -1,0 +1,7 @@
+{
+    "epochs" : 30,
+    "image_size" : {
+        "potato" : [256, 256],
+        "tomato" : [248, 248]
+    }
+}

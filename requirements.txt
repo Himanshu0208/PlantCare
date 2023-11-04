@@ -10,4 +10,7 @@ Flask
 pyYAML
 tqdm
 joblib
+python-box
+ensure
+ensure
 -e .
