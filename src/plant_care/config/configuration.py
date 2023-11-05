@@ -1,4 +1,5 @@
 import os
+from plant_care.components.model_evaluation import ModelEvaluationConfig
 from plant_care.constants import *
 from plant_care.utils.main_utils import load_json
 from plant_care.utils.main_utils import create_directories
@@ -85,3 +86,14 @@ class ConfigurationManager:
     )
 
     return training
+
+  def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+    model_evaluation = ModelEvaluationConfig(
+        path_of_model = self.config.prepare_callbacks.checkpoint_model_filepath,
+        data_dir = self.config.data_ingestion.data_dir,
+        params_target_size = self.params.TARGET_SIZE,
+        params_batch_size = self.params.BATCH_SIZE,
+        params_class_mode = self.params.CLASS_MODE
+    )
+
+    return model_evaluation
