@@ -1,7 +1,9 @@
+import os
 from plant_care.constants import *
 from plant_care.utils.main_utils import load_json
 from plant_care.utils.main_utils import create_directories
 from plant_care.components.data_ingestion import DataIngestionConfig
+from plant_care.components.prepare_callback import PrepareCallbackConfig
 from plant_care.components.prepare_base_model import PrepareBaseModelConfig
 
 class ConfigurationManager:
@@ -40,3 +42,27 @@ class ConfigurationManager:
     )
 
     return prepare_base_model_config
+  
+  def get_prepare_callback_config(self) -> PrepareCallbackConfig:
+    curr_config = self.config.prepare_callbacks
+    model_ckpt_dir = []
+    for model in curr_config.checkpoint_model_filepath:
+      dir = curr_config.checkpoint_model_filepath[f"{model}"]
+      dir = os.path.dirname(dir)
+      model_ckpt_dir.append(dir)
+
+    model_tb_dir = []
+    for model in curr_config.tensorboard_root_log_dir:
+      dir = curr_config.tensorboard_root_log_dir[f"{model}"]
+      model_tb_dir.append(dir)
+
+    create_directories(model_ckpt_dir)
+    create_directories(model_tb_dir)
+
+    prepare_callback_dir = PrepareCallbackConfig (
+        root_dir = curr_config.root_dir,
+        tensorboard_root_log_dir = curr_config.tensorboard_root_log_dir,
+        checkpoint_model_filepath = curr_config.checkpoint_model_filepath
+    )
+
+    return prepare_callback_dir

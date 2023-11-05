@@ -29,8 +29,18 @@
 
     "prepare_callbacks" : {
         "root_dir" : "artifacts/prepare_callbacks",
-        "tensorboard_root_dir" : "artifacts/prepare_callbacks/tensorboard_dir",
-        "checkpoint_root_dir" : "artifacts/prepare_callbacks/checkpoint_dir"
+        "model_dir" : {
+            "tomato" : "artifacts/prepare_callbacks/tomato",
+            "potato" : "artifacts/prepare_callbacks/potato"
+        },
+        "tensorboard_root_log_dir" : {
+            "tomato" : "artifacts/prepare_callbacks/tomato/tensorboard_log_dir",
+            "potato" : "artifacts/prepare_callbacks/potato/tensorboard_log_dir"           
+        },
+        "checkpoint_model_filepath" : {
+            "tomato" : "artifacts/prepare_callbacks/tomato/checkpoint_dir/model.h5",
+            "potato" : "artifacts/prepare_callbacks/potato/checkpoint_dir/model.h5"              
+        }
     },
 
     "training" : {
