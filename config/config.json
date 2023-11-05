@@ -45,9 +45,13 @@
 
     "training" : {
         "root_dir" : "artifacts/training",
+        "model_dir" : {
+            "potato" : "artifacts/training/potato",
+            "tomato" : "artifacts/training/tomato"
+        },
         "trained_model_path" : {
-            "potato" : "artifacts/training/potato_model.h5",
-            "tomato" : "artifacts/training/tomato_model.h5"
+            "potato" : "artifacts/training/potato/model.h5",
+            "tomato" : "artifacts/training/tomato/model.h5"            
         }
     }
 }

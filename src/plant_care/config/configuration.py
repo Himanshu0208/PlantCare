@@ -2,6 +2,7 @@ import os
 from plant_care.constants import *
 from plant_care.utils.main_utils import load_json
 from plant_care.utils.main_utils import create_directories
+from plant_care.components.training import TrainingConfig
 from plant_care.components.data_ingestion import DataIngestionConfig
 from plant_care.components.prepare_callback import PrepareCallbackConfig
 from plant_care.components.prepare_base_model import PrepareBaseModelConfig
@@ -66,3 +67,21 @@ class ConfigurationManager:
     )
 
     return prepare_callback_dir
+  
+  def get_training_config(self) -> TrainingConfig:
+    training = self.config.training
+    params = self.params
+    create_directories([training.root_dir])
+
+    training = TrainingConfig(
+      root_dir = training.root_dir,
+      trained_model_path = training.trained_model_path,
+      updated_model_path = self.config.prepare_base_model.updated_model_path,
+      trainning_data = self.config.data_ingestion.data_dir,
+      params_epochs = params.EPOCHS,
+      params_batch_size = params.BATCH_SIZE,
+      params_target_size = params.TARGET_SIZE,
+      params_class_mode = params.CLASS_MODE
+    )
+
+    return training

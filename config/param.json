@@ -10,5 +10,13 @@
     "CLASSES" : {
         "potato" : 3,
         "tomato" : 10
+    },
+    "TARGET_SIZE" : {
+        "potato" : [256, 256],
+        "tomato" : [224, 224]
+    },
+    "CLASS_MODE" : {
+      "potato" : "categorical",
+      "tomato" : "categorical"
     }
 }
