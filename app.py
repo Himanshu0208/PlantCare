@@ -26,20 +26,7 @@ class ClientApp:
         self.classifier = PredictionPipeline(self.filename)
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
-def openai_api(plant_name: str, disease: str, lang: str) -> str:
-    
-    
-    # completion2 = openai.chat.completions.create(
-    #   model="gpt-3.5-turbo",
-    #   messages=[
-    #     {"role": "system", "content": "You are a helpful assistant."},
-    #     {"role": "user", "content": f"just return {lang} of 'Your {plant_name} plant have {disease}' "}
-    #   ]
-    # )
-
-    # if (disease == 'healthy') :
-    #     return completion2.choices[0].message.content
-    
+def openai_api(plant_name: str, disease: str, lang: str) -> str:  
     completion1 = openai.chat.completions.create(
       model="gpt-3.5-turbo",
       messages=[
